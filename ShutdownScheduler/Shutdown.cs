@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
@@ -13,9 +12,6 @@ namespace ShutdownScheduler
     {
         private Dictionary<RadioButton, string> rbValues =
             new Dictionary<RadioButton, string>();
-
-        private List<Options> optionsList = new List<Options>();
-
 
         public Shutdown()
         {
@@ -38,7 +34,7 @@ namespace ShutdownScheduler
         {
             decimal min = numMinutes.Value * 60;
             string options = string.Empty;
-            string shutdownType = GetSelectedValue(panel1);
+            string shutdownType = GetSelectedValue(pnlShutdownType);
 
             for (int i = 0; i < clOptions.Items.Count; i++)
             {
